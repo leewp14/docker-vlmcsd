@@ -9,4 +9,4 @@ FROM alpine:latest
 COPY --from=builder /root/vlmcsd/bin/vlmcsd /vlmcsd
 RUN apk add --no-cache tzdata
 
-CMD ["/vlmcsd", "-D", "-d", "-t", "3", "-e", "-v", "-L", "0.0.0.0:${PORT}", "-P", "${PORT}"]
+CMD /vlmcsd -D -d -t 3 -e -v -L 0.0.0.0$PORT
